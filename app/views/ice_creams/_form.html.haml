@@ -1,0 +1,13 @@
+- if @ice_cream.errors.any?
+  %ul
+    - @ice_cream.errors.full_messages.each do |msg|
+      %li= msg
+
+= form_for @ice_cream do |form|
+  = form.label :name
+  = form.text_field :name
+
+  = form.label :desc, 'Description'
+  = form.text_area :desc
+
+  = form.submit

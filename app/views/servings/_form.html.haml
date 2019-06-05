@@ -1,0 +1,6 @@
+= form_for @serving do |form|
+  = form.fields_for :scoops do |scoop_form|
+    = scoop_form.label :ice_cream_name, scoop_form.object.ice_cream_name, title: scoop_form.object.ice_cream_desc
+    = scoop_form.number_field :quantity
+
+  = form.submit

@@ -1,0 +1,19 @@
+%h1 Hello, World!
+
+= link_to 'New Ice Cream', new_ice_cream_path
+= link_to 'New Serving', new_serving_path
+
+%table
+  %thead
+    %th
+    %th
+    %th Name
+    %th Desc
+  %tbody
+    - @ice_creams.each do |ice_cream|
+      %tr
+        %td= link_to 'More Info', ice_cream
+        %td= link_to 'Edit', edit_ice_cream_path(ice_cream)
+        %td= link_to 'Delete', ice_cream, method: :delete, data: { confirm: 'Are you sure you want to delete this ice cream?' }
+        %td= ice_cream.name
+        %td= ice_cream.desc
